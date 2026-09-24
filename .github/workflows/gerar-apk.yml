@@ -3,7 +3,6 @@ name: Gerar APK
 on:
   workflow_dispatch:
   push:
-    branches: [main]
 
 jobs:
   apk:
@@ -22,9 +21,7 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - uses: android-actions/setup-android@v3
-
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: bun install
 
       - name: Build do app + sincronizar com Android
